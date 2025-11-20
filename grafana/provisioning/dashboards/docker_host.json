@@ -1703,7 +1703,7 @@
     }
   ],
   "preload": false,
-  "refresh": "10s",
+  "refresh": "5s",
   "schemaVersion": 42,
   "tags": [
     "system"
