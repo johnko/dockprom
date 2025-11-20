@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 4,
+  "id": 3,
   "links": [
     {
       "icon": "external link",
@@ -15847,7 +15847,7 @@
     }
   ],
   "preload": false,
-  "refresh": "1m",
+  "refresh": "5s",
   "schemaVersion": 42,
   "tags": [
     "linux"
@@ -15929,7 +15929,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
