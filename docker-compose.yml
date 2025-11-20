@@ -56,14 +56,14 @@ services:
     volumes:
       # https://github.com/google/cadvisor/issues/3628#issuecomment-2526141411
       - /:/rootfs:ro
-      - /dev/disk/:/dev/disk:ro
+      - /dev/disk:/dev/disk:ro
       - /etc/machine-id:/etc/machine-id:ro
       - /sys:/sys:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /var/lib/containers:/var/lib/containers:ro # podman rootful
       - /var/run:/var/run:ro
       - /var/lib/docker:/var/lib/docker:ro
-      - /run/user/502/:/run/user/502/:ro # podman rootful mount the socket
+      - /run/user/502:/run/user/502:ro # podman rootful mount the socket
       #- /cgroup:/cgroup:ro #doesn't work on MacOS only for Linux
   grafana:
     container_name: grafana
