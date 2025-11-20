@@ -117,7 +117,7 @@ services:
     container_name: pushgateway
     expose:
       - 9091
-    image: prom/pushgateway:v1.11.0
+    image: prom/pushgateway:v1.11.2
     labels:
       org.label-schema.group: monitoring
     networks:
