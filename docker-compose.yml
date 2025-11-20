@@ -39,7 +39,7 @@ services:
       - ./caddy:/etc/caddy
   cadvisor:
     command:
-      - --podman=unix:///run/user/$(id -u)/podman.sock # podman rootful # https://github.com/google/cadvisor/issues/3421
+      - --podman=unix:///run/user/502/podman.sock # podman rootful # https://github.com/google/cadvisor/issues/3421
       - --docker=unix://
     container_name: cadvisor
     devices:
@@ -63,7 +63,7 @@ services:
       - /var/lib/containers:/var/lib/containers:ro # podman rootful
       - /var/run:/var/run:ro
       - /var/lib/docker:/var/lib/docker:ro
-      - /run/user/$(id -u)/:/run/user/$(id -u)/:ro # podman rootful mount the socket
+      - /run/user/502/:/run/user/502/:ro # podman rootful mount the socket
       #- /cgroup:/cgroup:ro #doesn't work on MacOS only for Linux
   grafana:
     container_name: grafana
