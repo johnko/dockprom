@@ -13156,15 +13156,24 @@
     "list": [
       {
         "current": {},
+        "includeAll": false,
+        "label": "Datasource",
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "current": {},
         "datasource": {
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
         "definition": "",
-        "hide": 0,
         "includeAll": false,
         "label": "Job",
-        "multi": false,
         "name": "job",
         "options": [],
         "query": {
@@ -13173,12 +13182,8 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {},
@@ -13186,25 +13191,19 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "",
-        "hide": 0,
+        "definition": "label_values(node_uname_info{job=\"$job\"}, nodename)",
         "includeAll": false,
-        "label": "Host:",
-        "multi": false,
-        "name": "name",
+        "label": "Nodename",
+        "name": "nodename",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{job=~\"$job\"}, nodename)",
-          "refId": "Prometheus-name-Variable-Query"
+          "query": "label_values(node_uname_info{job=\"$job\"}, nodename)",
+          "refId": "Prometheus-nodename-Variable-Query"
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {},
@@ -13212,51 +13211,19 @@
           "type": "prometheus",
           "uid": "${DS_PROMETHEUS}"
         },
-        "definition": "",
-        "hide": 2,
+        "definition": "label_values(node_uname_info{job=\"$job\", nodename=\"$nodename\"}, instance)",
         "includeAll": false,
-        "label": "Host:",
-        "multi": false,
+        "label": "Instance",
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{nodename=\"$name\"}, instance)",
+          "query": "label_values(node_uname_info{job=\"$job\", nodename=\"$nodename\"}, instance)",
           "refId": "Prometheus-node-Variable-Query"
         },
         "refresh": 1,
-        "regex": "/([^:]+):.*/",
-        "skipUrlSync": false,
+        "regex": "",
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": false,
-        "label": "Port",
-        "multi": false,
-        "name": "port",
-        "options": [],
-        "query": {
-          "query": "label_values(node_uname_info{instance=~\"$node:(.*)\"}, instance)",
-          "refId": "Prometheus-port-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "/[^:]+:(.*)/",
-        "skipUrlSync": false,
-        "sort": 3,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       }
     ]
   },
