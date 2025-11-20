@@ -5,11 +5,11 @@ ACTION="$1"
 
 set -u
 
-if [[ "stop" == "$ACTION" ]]; then
+if [[ "stop" == "$ACTION" ]] || [[ "down" == "$ACTION" ]]; then
   docker-compose down
 elif [[ "destroy" == "$ACTION" ]]; then
   docker-compose down --volumes
-elif [[ "up" == "$ACTION" ]]; then
+elif [[ "start" == "$ACTION" ]] || [[ "up" == "$ACTION" ]]; then
   docker-compose up -d
 elif [[ "logs" == "$ACTION" ]]; then
   docker-compose logs
