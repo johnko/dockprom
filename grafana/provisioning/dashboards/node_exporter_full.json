@@ -2659,7 +2659,9 @@
           ],
           "displayMode": "table",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": true,
+          "sortBy": "Max",
+          "sortDesc": true
         },
         "tooltip": {
           "hideZeros": false,
@@ -2671,7 +2673,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"}",
+          "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"}",
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
@@ -2680,7 +2682,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "(rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"})",
+          "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"})",
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
@@ -15936,5 +15938,5 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 3
+  "version": 4
 }
