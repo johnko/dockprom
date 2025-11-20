@@ -40,7 +40,7 @@ services:
   cadvisor:
     command:
       # - --podman=unix:///var/run/user/$(id -u)/podman/podman.sock # podman rootless
-      - --podman=unix:///run/user/$(id -u)/podman.sock # podman rootful
+      - --podman=unix:///run/user/$(id -u)/podman.sock # podman rootful # https://github.com/google/cadvisor/issues/3421
       - --docker=unix://
     container_name: cadvisor
     devices:
