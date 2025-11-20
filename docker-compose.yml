@@ -38,9 +38,6 @@ services:
     volumes:
       - ./caddy:/etc/caddy
   cadvisor:
-    command:
-      - --podman=unix:///run/user/502/podman.sock # podman rootful # https://github.com/google/cadvisor/issues/3421
-      - --docker=unix://
     container_name: cadvisor
     devices:
       - /dev/kmsg:/dev/kmsg
@@ -58,12 +55,10 @@ services:
       - /:/rootfs:ro
       - /dev/disk:/dev/disk:ro
       - /etc/machine-id:/etc/machine-id:ro
+      - /run/podman:/var/run/podman:ro # so podman socket mounts to default path
       - /sys:/sys:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /var/lib/containers:/var/lib/containers:ro # podman rootful
-      - /var/run:/var/run:ro
-      - /var/lib/docker:/var/lib/docker:ro
-      - /run/user/502:/run/user/502:ro # podman rootful mount the socket
       #- /cgroup:/cgroup:ro #doesn't work on MacOS only for Linux
   grafana:
     container_name: grafana
