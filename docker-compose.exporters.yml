@@ -1,37 +1,33 @@
 services:
-
-  nodeexporter:
-    image: prom/node-exporter:v1.9.1
-    container_name: nodeexporter
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
-    restart: unless-stopped
-    network_mode: host
-    labels:
-      org.label-schema.group: "monitoring"
-
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:v0.52.1
     container_name: cadvisor
-    privileged: true
     devices:
       - /dev/kmsg:/dev/kmsg
+    image: gcr.io/cadvisor/cadvisor:v0.52.1
+    labels:
+      org.label-schema.group: monitoring
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /cgroup:/cgroup:ro
-    restart: unless-stopped
-    network_mode: host
+  nodeexporter:
+    command:
+      - --path.procfs=/host/proc
+      - --path.rootfs=/rootfs
+      - --path.sysfs=/host/sys
+      - --collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)
+    container_name: nodeexporter
+    image: prom/node-exporter:v1.9.1
     labels:
-      org.label-schema.group: "monitoring"
-  
-
+      org.label-schema.group: monitoring
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
