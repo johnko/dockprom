@@ -38,6 +38,8 @@ services:
     volumes:
       - ./caddy:/etc/caddy
   cadvisor:
+    command:
+      - --podman=unix:///var/run/user/$(id -u)/podman/podman.sock # podman rootless
     container_name: cadvisor
     devices:
       - /dev/kmsg:/dev/kmsg
@@ -51,10 +53,14 @@ services:
     privileged: true
     restart: unless-stopped
     volumes:
+      # https://github.com/google/cadvisor/issues/3628#issuecomment-2526141411
       - /:/rootfs:ro
       - /var/run:/var/run:ro
       - /sys:/sys:ro
-      - /var/lib/docker:/var/lib/docker:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro # podman rootless
+      # - /var/lib/docker:/var/lib/docker:ro # podman rootful
+      # - /var/lib/containers:/var/lib/containers:ro # podman rootful
+      - $HOME/.local/share/containers:/var/lib/containers:ro # podman rootless
       #- /cgroup:/cgroup:ro #doesn't work on MacOS only for Linux
   grafana:
     container_name: grafana
