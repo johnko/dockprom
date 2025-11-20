@@ -22,7 +22,7 @@ services:
       - --path.sysfs=/host/sys
       - --collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)
     container_name: nodeexporter
-    image: prom/node-exporter:v1.9.1
+    image: prom/node-exporter:v1.10.2
     labels:
       org.label-schema.group: monitoring
     network_mode: host

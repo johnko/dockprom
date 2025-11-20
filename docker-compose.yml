@@ -83,7 +83,7 @@ services:
     container_name: nodeexporter
     expose:
       - 9100
-    image: prom/node-exporter:v1.9.1
+    image: prom/node-exporter:v1.10.2
     labels:
       org.label-schema.group: monitoring
     networks:
