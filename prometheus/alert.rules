@@ -37,30 +37,6 @@ groups:
           severity: warning
   - name: containers
     rules:
-      - alert: jenkins_down
-        annotations:
-          description: Jenkins container is down for more than 30 seconds.
-          summary: Jenkins down
-        expr: absent(container_memory_usage_bytes{name="jenkins"})
-        for: 30s
-        labels:
-          severity: critical
-      - alert: jenkins_high_cpu
-        annotations:
-          description: Jenkins CPU usage is {{ humanize $value}}%.
-          summary: Jenkins high CPU usage
-        expr: sum(rate(container_cpu_usage_seconds_total{name="jenkins"}[1m])) / count(node_cpu_seconds_total{mode="system"}) * 100 > 10
-        for: 30s
-        labels:
-          severity: warning
-      - alert: jenkins_high_memory
-        annotations:
-          description: Jenkins memory consumption is at {{ humanize $value}}.
-          summary: Jenkins high memory usage
-        expr: sum(container_memory_usage_bytes{name="jenkins"}) > 1200000000
-        for: 30s
-        labels:
-          severity: warning
       - alert: dyndns_down
         annotations:
           description: dyndns container is down for more than 30 seconds.
