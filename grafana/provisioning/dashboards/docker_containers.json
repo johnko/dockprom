@@ -838,9 +838,9 @@
           "showLegend": false
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "12.2.2",
@@ -970,7 +970,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1075,9 +1075,9 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "12.2.2",
@@ -1180,9 +1180,9 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "12.2.2",
@@ -1285,7 +1285,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1390,7 +1390,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1445,13 +1445,13 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "",
+        "definition": "label_values(node_uname_info{job!=\"router\"},job)",
         "includeAll": false,
         "label": "Job",
         "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info, job)",
+          "query": "label_values(node_uname_info{job!=\"router\"},job)",
           "refId": "Prometheus-job-Variable-Query"
         },
         "refresh": 1,
@@ -1515,5 +1515,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 14
+  "version": 22
 }

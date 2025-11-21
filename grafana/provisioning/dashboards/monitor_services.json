@@ -3601,13 +3601,13 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "",
+        "definition": "label_values(node_uname_info{job!=\"router\"},job)",
         "includeAll": false,
         "label": "Job",
         "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info, job)",
+          "query": "label_values(node_uname_info{job!=\"router\"},job)",
           "refId": "Prometheus-job-Variable-Query"
         },
         "refresh": 1,
