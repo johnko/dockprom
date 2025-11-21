@@ -1433,7 +1433,7 @@
               },
               "custom": {
                 "axisBorderShow": false,
-                "axisCenteredZero": false,
+                "axisCenteredZero": true,
                 "axisColorMode": "text",
                 "axisLabel": "",
                 "axisPlacement": "auto",
@@ -1497,7 +1497,7 @@
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 13
+            "y": 473
           },
           "id": 74,
           "options": {
@@ -1603,7 +1603,7 @@
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 13
+            "y": 473
           },
           "id": 152,
           "options": {
@@ -2462,7 +2462,7 @@
           },
           "custom": {
             "axisBorderShow": false,
-            "axisCenteredZero": false,
+            "axisCenteredZero": true,
             "axisColorMode": "text",
             "axisLabel": "out (-) / in (+)",
             "axisPlacement": "auto",
@@ -2538,7 +2538,9 @@
           ],
           "displayMode": "table",
           "placement": "bottom",
-          "showLegend": true
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
         },
         "tooltip": {
           "hideZeros": false,
@@ -2550,7 +2552,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
@@ -2559,7 +2561,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
+          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])*8",
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
@@ -2583,7 +2585,7 @@
           },
           "custom": {
             "axisBorderShow": false,
-            "axisCenteredZero": false,
+            "axisCenteredZero": true,
             "axisColorMode": "text",
             "axisLabel": "out (-) / in (+)",
             "axisPlacement": "auto",
@@ -2660,7 +2662,7 @@
           "displayMode": "table",
           "placement": "bottom",
           "showLegend": true,
-          "sortBy": "Max",
+          "sortBy": "Mean",
           "sortDesc": true
         },
         "tooltip": {
@@ -2673,7 +2675,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "irate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"}",
+          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"}",
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
@@ -2682,7 +2684,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "(irate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"})",
+          "expr": "(rate(node_network_transmit_bytes_total{instance=\"$node\",job=\"$job\"}[$__rate_interval])\n / ignoring(speed) node_network_speed_bytes{instance=\"$node\",job=\"$job\", speed!=\"-1\"})",
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
@@ -3189,7 +3191,6 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -3206,8 +3207,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": 0
+                "color": "green"
               }
             ]
           },
@@ -3239,7 +3239,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "11.6.1",
       "targets": [
         {
           "editorMode": "code",
@@ -3290,7 +3290,6 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "showValues": false,
             "spanNulls": false,
             "stacking": {
               "group": "A",
@@ -3306,8 +3305,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": 0
+                "color": "green"
               }
             ]
           },
@@ -3364,7 +3362,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "11.6.1",
       "targets": [
         {
           "editorMode": "code",
@@ -3469,7 +3467,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3486,8 +3483,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -3519,7 +3515,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 1992
+            "y": 1192
           },
           "id": 135,
           "options": {
@@ -3540,7 +3536,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -3599,7 +3595,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3616,8 +3611,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -3629,7 +3623,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 1992
+            "y": 1192
           },
           "id": 130,
           "options": {
@@ -3649,7 +3643,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -3726,7 +3720,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3743,8 +3736,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -3756,7 +3748,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2002
+            "y": 1392
           },
           "id": 131,
           "options": {
@@ -3776,7 +3768,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -3835,7 +3827,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3852,8 +3843,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -3865,7 +3855,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2002
+            "y": 1392
           },
           "id": 138,
           "options": {
@@ -3886,7 +3876,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -3965,7 +3955,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -3982,8 +3971,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -4026,7 +4014,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2012
+            "y": 1402
           },
           "id": 136,
           "options": {
@@ -4047,7 +4035,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -4106,7 +4094,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -4123,8 +4110,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -4136,7 +4122,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2012
+            "y": 1402
           },
           "id": 191,
           "options": {
@@ -4157,7 +4143,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -4262,7 +4248,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2022
+            "y": 1412
           },
           "id": 160,
           "options": {
@@ -4411,7 +4397,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2022
+            "y": 1412
           },
           "id": 70,
           "options": {
@@ -4527,7 +4513,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2032
+            "y": 1422
           },
           "id": 129,
           "options": {
@@ -4650,7 +4636,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2032
+            "y": 1422
           },
           "id": 137,
           "options": {
@@ -5033,7 +5019,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2042
+            "y": 1432
           },
           "id": 128,
           "options": {
@@ -5151,7 +5137,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2042
+            "y": 1432
           },
           "id": 140,
           "options": {
@@ -5262,7 +5248,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5278,8 +5263,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5304,7 +5288,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2243
+            "y": 1193
           },
           "id": 176,
           "options": {
@@ -5324,7 +5308,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -5383,7 +5367,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5399,8 +5382,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5425,7 +5407,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2243
+            "y": 1193
           },
           "id": 22,
           "options": {
@@ -5445,7 +5427,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -5504,7 +5486,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5521,8 +5502,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5571,7 +5551,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2253
+            "y": 1373
           },
           "id": 175,
           "options": {
@@ -5592,7 +5572,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -5660,7 +5640,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5677,8 +5656,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5706,7 +5684,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2253
+            "y": 1373
           },
           "id": 307,
           "options": {
@@ -5726,7 +5704,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -5791,7 +5769,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5807,8 +5784,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5820,7 +5796,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2434
+            "y": 1194
           },
           "id": 260,
           "options": {
@@ -5840,7 +5816,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -5911,7 +5887,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -5927,8 +5902,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -5940,7 +5914,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2434
+            "y": 1194
           },
           "id": 291,
           "options": {
@@ -5960,7 +5934,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6011,7 +5985,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6027,8 +6000,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -6040,7 +6012,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2444
+            "y": 1344
           },
           "id": 168,
           "options": {
@@ -6060,7 +6032,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6143,7 +6115,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6159,8 +6130,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -6172,7 +6142,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2444
+            "y": 1344
           },
           "id": 333,
           "options": {
@@ -6192,7 +6162,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6253,7 +6223,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6269,8 +6238,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -6282,7 +6250,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2454
+            "y": 1354
           },
           "id": 334,
           "options": {
@@ -6302,7 +6270,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6363,7 +6331,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6379,8 +6346,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6396,7 +6362,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2454
+            "y": 1354
           },
           "id": 335,
           "options": {
@@ -6416,7 +6382,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6511,7 +6477,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6528,8 +6493,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6545,7 +6509,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2605
+            "y": 1195
           },
           "id": 62,
           "options": {
@@ -6565,7 +6529,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6624,7 +6588,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6641,8 +6604,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -6739,7 +6701,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2605
+            "y": 1195
           },
           "id": 315,
           "options": {
@@ -6759,7 +6721,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6810,7 +6772,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6827,8 +6788,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -6840,7 +6800,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2615
+            "y": 1225
           },
           "id": 148,
           "options": {
@@ -6860,7 +6820,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -6910,7 +6870,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -6926,8 +6885,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -6956,7 +6914,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2615
+            "y": 1225
           },
           "id": 305,
           "options": {
@@ -6976,7 +6934,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7049,7 +7007,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7066,8 +7023,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7109,7 +7065,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2625
+            "y": 1235
           },
           "id": 313,
           "options": {
@@ -7129,7 +7085,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7190,7 +7146,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7207,8 +7162,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7250,7 +7204,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2625
+            "y": 1235
           },
           "id": 314,
           "options": {
@@ -7270,7 +7224,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7345,7 +7299,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7362,8 +7315,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7375,7 +7327,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2656
+            "y": 1276
           },
           "id": 8,
           "options": {
@@ -7395,7 +7347,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7454,7 +7406,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7471,8 +7422,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7514,7 +7464,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2656
+            "y": 1276
           },
           "id": 7,
           "options": {
@@ -7534,7 +7484,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7611,7 +7561,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7627,8 +7576,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7707,7 +7655,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2666
+            "y": 1286
           },
           "id": 321,
           "options": {
@@ -7727,7 +7675,7 @@
               "sort": "desc"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7798,7 +7746,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7814,8 +7761,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7827,7 +7773,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2666
+            "y": 1286
           },
           "id": 306,
           "options": {
@@ -7847,7 +7793,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7898,7 +7844,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -7915,8 +7860,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -7928,7 +7872,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2676
+            "y": 1296
           },
           "id": 259,
           "options": {
@@ -7948,7 +7892,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -7999,7 +7943,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8016,8 +7959,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8059,7 +8001,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2676
+            "y": 1296
           },
           "id": 151,
           "options": {
@@ -8079,7 +8021,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8152,7 +8094,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8169,8 +8110,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8202,7 +8142,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2687
+            "y": 1197
           },
           "id": 158,
           "options": {
@@ -8222,7 +8162,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8310,7 +8250,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8326,8 +8265,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8359,7 +8297,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2687
+            "y": 1197
           },
           "id": 300,
           "options": {
@@ -8379,7 +8317,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8430,7 +8368,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8446,8 +8383,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -8463,7 +8399,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2697
+            "y": 1207
           },
           "id": 302,
           "options": {
@@ -8483,7 +8419,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8534,7 +8470,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8551,8 +8486,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8564,7 +8498,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2697
+            "y": 1207
           },
           "id": 325,
           "options": {
@@ -8584,7 +8518,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8660,7 +8594,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8676,8 +8609,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8765,7 +8697,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2708
+            "y": 4688
           },
           "id": 298,
           "options": {
@@ -8785,7 +8717,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8876,7 +8808,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8893,8 +8824,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -8906,7 +8836,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2708
+            "y": 4688
           },
           "id": 331,
           "options": {
@@ -8926,7 +8856,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -8977,7 +8907,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -8994,8 +8923,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9007,7 +8935,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2718
+            "y": 4698
           },
           "id": 297,
           "options": {
@@ -9027,7 +8955,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9078,7 +9006,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9095,8 +9022,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9108,7 +9034,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2718
+            "y": 4698
           },
           "id": 332,
           "options": {
@@ -9128,7 +9054,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9193,7 +9119,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9209,8 +9134,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9250,7 +9174,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2729
+            "y": 489
           },
           "id": 9,
           "options": {
@@ -9270,7 +9194,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9327,7 +9251,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9343,8 +9266,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9384,7 +9306,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2729
+            "y": 489
           },
           "id": 33,
           "options": {
@@ -9404,7 +9326,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9465,7 +9387,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9481,8 +9402,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9522,7 +9442,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2739
+            "y": 849
           },
           "id": 37,
           "options": {
@@ -9542,7 +9462,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9601,7 +9521,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9618,8 +9537,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9647,7 +9565,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2739
+            "y": 849
           },
           "id": 35,
           "options": {
@@ -9667,7 +9585,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9717,7 +9635,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9733,8 +9650,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9774,7 +9690,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2749
+            "y": 859
           },
           "id": 133,
           "options": {
@@ -9794,7 +9710,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -9851,7 +9767,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -9868,8 +9783,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -9897,7 +9811,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2749
+            "y": 859
           },
           "id": 36,
           "options": {
@@ -9917,7 +9831,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10028,7 +9942,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2759
+            "y": 869
           },
           "id": 301,
           "options": {
@@ -10159,7 +10073,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 2759
+            "y": 869
           },
           "id": 326,
           "options": {
@@ -10273,7 +10187,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 2769
+            "y": 879
           },
           "id": 34,
           "options": {
@@ -10357,7 +10271,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10374,8 +10287,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10417,7 +10329,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3130
+            "y": 490
           },
           "id": 28,
           "options": {
@@ -10437,7 +10349,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10496,7 +10408,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10513,8 +10424,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10526,7 +10436,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3130
+            "y": 490
           },
           "id": 41,
           "options": {
@@ -10546,7 +10456,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10596,7 +10506,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10614,8 +10523,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10627,7 +10535,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3140
+            "y": 830
           },
           "id": 44,
           "options": {
@@ -10647,7 +10555,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10707,7 +10615,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10724,8 +10631,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10737,7 +10643,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3140
+            "y": 830
           },
           "id": 219,
           "options": {
@@ -10757,7 +10663,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10821,7 +10727,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10837,8 +10742,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10863,7 +10767,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 91
+            "y": 491
           },
           "id": 60,
           "options": {
@@ -10884,7 +10788,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -10945,7 +10849,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -10961,8 +10864,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -10987,7 +10889,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 91
+            "y": 491
           },
           "id": 142,
           "options": {
@@ -11008,7 +10910,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11067,7 +10969,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11083,8 +10984,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11109,7 +11009,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 101
+            "y": 711
           },
           "id": 143,
           "options": {
@@ -11130,7 +11030,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11189,7 +11089,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11205,8 +11104,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11231,7 +11129,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 101
+            "y": 711
           },
           "id": 141,
           "options": {
@@ -11252,7 +11150,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11311,7 +11209,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11327,8 +11224,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11353,7 +11249,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 111
+            "y": 721
           },
           "id": 146,
           "options": {
@@ -11374,7 +11270,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11424,7 +11320,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11440,8 +11335,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11466,7 +11360,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 111
+            "y": 721
           },
           "id": 327,
           "options": {
@@ -11487,7 +11381,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11537,7 +11431,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11553,8 +11446,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11579,7 +11471,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 121
+            "y": 731
           },
           "id": 145,
           "options": {
@@ -11600,7 +11492,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11650,7 +11542,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11666,8 +11557,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11692,7 +11582,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 121
+            "y": 731
           },
           "id": 144,
           "options": {
@@ -11713,7 +11603,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11772,7 +11662,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11788,8 +11677,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11814,7 +11702,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 131
+            "y": 741
           },
           "id": 232,
           "options": {
@@ -11835,7 +11723,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11885,7 +11773,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -11901,8 +11788,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -11914,7 +11800,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 131
+            "y": 741
           },
           "id": 231,
           "options": {
@@ -11935,7 +11821,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -11985,7 +11871,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12002,8 +11887,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12015,7 +11899,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 141
+            "y": 751
           },
           "id": 230,
           "options": {
@@ -12035,7 +11919,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12085,7 +11969,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12102,8 +11985,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12145,7 +12027,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 141
+            "y": 751
           },
           "id": 61,
           "options": {
@@ -12165,7 +12047,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12224,7 +12106,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12240,8 +12121,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12253,7 +12133,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 151
+            "y": 761
           },
           "id": 309,
           "options": {
@@ -12274,7 +12154,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12318,8 +12198,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12331,7 +12210,7 @@
             "h": 10,
             "w": 6,
             "x": 12,
-            "y": 151
+            "y": 761
           },
           "id": 280,
           "options": {
@@ -12358,7 +12237,7 @@
             "sizing": "manual",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12392,8 +12271,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12405,7 +12283,7 @@
             "h": 10,
             "w": 6,
             "x": 18,
-            "y": 151
+            "y": 761
           },
           "id": 288,
           "options": {
@@ -12432,7 +12310,7 @@
             "sizing": "manual",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12496,7 +12374,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12513,8 +12390,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12526,7 +12402,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3552
+            "y": 492
           },
           "id": 63,
           "options": {
@@ -12547,7 +12423,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12628,7 +12504,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12645,8 +12520,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12658,7 +12532,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3552
+            "y": 492
           },
           "id": 124,
           "options": {
@@ -12679,7 +12553,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12740,7 +12614,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12757,8 +12630,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12770,7 +12642,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3582
+            "y": 502
           },
           "id": 126,
           "options": {
@@ -12791,7 +12663,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12842,7 +12714,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12859,8 +12730,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12872,7 +12742,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3582
+            "y": 502
           },
           "id": 125,
           "options": {
@@ -12893,7 +12763,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -12954,7 +12824,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -12971,8 +12840,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -12984,7 +12852,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3592
+            "y": 512
           },
           "id": 220,
           "options": {
@@ -13005,7 +12873,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13074,7 +12942,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13091,8 +12958,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13104,7 +12970,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3592
+            "y": 512
           },
           "id": 339,
           "options": {
@@ -13125,7 +12991,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13186,7 +13052,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13203,8 +13068,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13216,7 +13080,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3602
+            "y": 522
           },
           "id": 336,
           "options": {
@@ -13237,7 +13101,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13298,7 +13162,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13314,8 +13177,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13340,7 +13202,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3602
+            "y": 522
           },
           "id": 290,
           "options": {
@@ -13361,7 +13223,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13422,7 +13284,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13438,8 +13299,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13455,7 +13315,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3612
+            "y": 532
           },
           "id": 310,
           "options": {
@@ -13476,7 +13336,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13527,7 +13387,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13543,8 +13402,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13576,7 +13434,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3612
+            "y": 532
           },
           "id": 330,
           "options": {
@@ -13597,7 +13455,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13672,7 +13530,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13688,8 +13545,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13714,7 +13570,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3623
+            "y": 623
           },
           "id": 221,
           "options": {
@@ -13735,7 +13591,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13795,7 +13651,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13811,8 +13666,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -13848,7 +13702,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3623
+            "y": 623
           },
           "id": 299,
           "options": {
@@ -13868,7 +13722,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -13929,7 +13783,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -13945,8 +13798,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -13971,7 +13823,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3633
+            "y": 653
           },
           "id": 55,
           "options": {
@@ -13991,7 +13843,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14052,7 +13904,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14068,8 +13919,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14098,7 +13948,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3633
+            "y": 653
           },
           "id": 115,
           "options": {
@@ -14118,7 +13968,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14179,7 +14029,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14196,8 +14045,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -14209,7 +14057,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3643
+            "y": 663
           },
           "id": 104,
           "options": {
@@ -14229,7 +14077,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14348,7 +14196,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14364,8 +14211,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -14381,7 +14227,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3643
+            "y": 663
           },
           "id": 109,
           "options": {
@@ -14401,7 +14247,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14490,7 +14336,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14506,8 +14351,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -14532,7 +14376,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3653
+            "y": 673
           },
           "id": 50,
           "options": {
@@ -14552,7 +14396,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14603,7 +14447,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14619,8 +14462,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -14648,7 +14490,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3653
+            "y": 673
           },
           "id": 91,
           "options": {
@@ -14668,7 +14510,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14739,7 +14581,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14756,8 +14597,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -14799,7 +14639,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3663
+            "y": 683
           },
           "id": 85,
           "options": {
@@ -14819,7 +14659,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14880,7 +14720,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -14896,8 +14735,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -14909,7 +14747,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3663
+            "y": 683
           },
           "id": 337,
           "options": {
@@ -14929,7 +14767,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -14990,7 +14828,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15007,8 +14844,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -15020,7 +14856,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3673
+            "y": 693
           },
           "id": 82,
           "options": {
@@ -15040,7 +14876,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15101,7 +14937,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15119,8 +14954,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -15132,7 +14966,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3673
+            "y": 693
           },
           "id": 320,
           "options": {
@@ -15152,7 +14986,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15257,7 +15091,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15273,8 +15106,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -15290,7 +15122,7 @@
             "h": 10,
             "w": 12,
             "x": 0,
-            "y": 3554
+            "y": 624
           },
           "id": 40,
           "options": {
@@ -15310,7 +15142,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15361,7 +15193,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15377,8 +15208,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -15390,7 +15220,7 @@
             "h": 10,
             "w": 12,
             "x": 12,
-            "y": 3554
+            "y": 624
           },
           "id": 308,
           "options": {
@@ -15410,7 +15240,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15461,7 +15291,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15478,8 +15307,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -15545,7 +15373,7 @@
             "h": 10,
             "w": 10,
             "x": 0,
-            "y": 3564
+            "y": 634
           },
           "id": 149,
           "options": {
@@ -15565,7 +15393,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15624,7 +15452,6 @@
                   "type": "linear"
                 },
                 "showPoints": "never",
-                "showValues": false,
                 "spanNulls": false,
                 "stacking": {
                   "group": "A",
@@ -15641,8 +15468,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   }
                 ]
               },
@@ -15708,7 +15534,7 @@
             "h": 10,
             "w": 10,
             "x": 10,
-            "y": 3564
+            "y": 634
           },
           "id": 64,
           "options": {
@@ -15728,7 +15554,7 @@
               "sort": "none"
             }
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15769,8 +15595,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": 0
+                    "color": "green"
                   },
                   {
                     "color": "dark-red",
@@ -15790,7 +15615,7 @@
             "h": 10,
             "w": 4,
             "x": 20,
-            "y": 3564
+            "y": 634
           },
           "id": 157,
           "options": {
@@ -15817,7 +15642,7 @@
             "sizing": "auto",
             "valueMode": "color"
           },
-          "pluginVersion": "12.2.2",
+          "pluginVersion": "11.6.1",
           "targets": [
             {
               "editorMode": "code",
@@ -15849,7 +15674,7 @@
     }
   ],
   "preload": false,
-  "refresh": "5s",
+  "refresh": "1m",
   "schemaVersion": 42,
   "tags": [
     "linux"
@@ -15873,15 +15698,14 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "label_values(node_uname_info{job!=\"nodeexporter\"},job)",
+        "definition": "",
         "includeAll": false,
         "label": "Job",
         "name": "job",
         "options": [],
         "query": {
-          "qryType": 1,
-          "query": "label_values(node_uname_info{job!=\"nodeexporter\"},job)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          "query": "label_values(node_uname_info, job)",
+          "refId": "Prometheus-job-Variable-Query"
         },
         "refresh": 1,
         "regex": "",
@@ -15931,12 +15755,12 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 4
+  "version": 8
 }
