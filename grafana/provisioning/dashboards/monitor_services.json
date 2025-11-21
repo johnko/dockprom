@@ -405,7 +405,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
         "y": 3
@@ -523,10 +523,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 9
       },
       "id": 7,
       "options": {
@@ -632,10 +632,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 15
       },
       "id": 73,
       "options": {
@@ -679,7 +679,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 21
       },
       "id": 22,
       "panels": [
@@ -4651,5 +4651,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 15
+  "version": 17
 }
