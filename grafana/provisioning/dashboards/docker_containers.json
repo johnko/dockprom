@@ -97,7 +97,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[1m])) / count(node_cpu_seconds_total{mode=\"user\"}) * 100",
+          "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[1m])) / count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}) * 100",
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -262,7 +262,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "(sum(node_memory_MemTotal_bytes) - sum(node_memory_MemFree_bytes+node_memory_Buffers_bytes+node_memory_Cached_bytes) ) / sum(node_memory_MemTotal_bytes) * 100",
+          "expr": "(sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}) - sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}) * 100",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -429,7 +429,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "(node_filesystem_size_bytes{fstype=\"aufs\"} - node_filesystem_free_bytes{fstype=\"aufs\"}) / node_filesystem_size_bytes{fstype=\"aufs\"}  * 100",
+          "expr": "(node_filesystem_size_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"} - node_filesystem_free_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"}) / node_filesystem_size_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"}  * 100",
           "interval": "30s",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -728,7 +728,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "node_load1",
+          "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "load 1m",
@@ -850,7 +850,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(irate(node_disk_read_bytes_total[5m]))",
+          "expr": "sum(irate(node_disk_read_bytes_total{instance=\"$node\",job=\"$job\"}[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "read",
@@ -863,7 +863,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(irate(node_disk_written_bytes_total[5m]))",
+          "expr": "sum(irate(node_disk_written_bytes_total{instance=\"$node\",job=\"$job\"}[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "written",
@@ -876,7 +876,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(irate(node_disk_io_time_seconds_total[5m]))",
+          "expr": "sum(irate(node_disk_io_time_seconds_total{instance=\"$node\",job=\"$job\"}[5m]))",
           "interval": "2s",
           "intervalFactor": 4,
           "legendFormat": "io time",
@@ -982,7 +982,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\"})) * 100",
+          "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"})) * 100",
           "intervalFactor": 10,
           "legendFormat": "{{ name }}",
           "metric": "container_cpu_user_seconds_total",
