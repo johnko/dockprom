@@ -950,7 +950,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1115,7 +1115,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1269,9 +1269,9 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "12.2.2",
@@ -1399,7 +1399,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1547,7 +1547,7 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
           "sort": "desc"
         }
@@ -1664,9 +1664,9 @@
           "showLegend": true
         },
         "tooltip": {
-          "hideZeros": false,
+          "hideZeros": true,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
       "pluginVersion": "12.2.2",
@@ -1801,5 +1801,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 27
+  "version": 42
 }
