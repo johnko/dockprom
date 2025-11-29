@@ -1,8 +1,8 @@
 receivers:
   - name: slack
     slack_configs:
-      - api_url: https://hooks.slack.com/services/<webhook-id>
-        channel: '#<channel-name>'
+      - api_url: $SLACK_URL
+        channel: '$SLACK_CHANNEL'
         send_resolved: true
         text: '{{ .CommonAnnotations.description }}'
         username: Prometheus
