@@ -84,7 +84,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -165,7 +165,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -245,7 +245,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -324,7 +324,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -404,7 +404,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -483,7 +483,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -601,7 +601,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -718,7 +718,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -848,7 +848,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -957,7 +957,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1124,7 +1124,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1280,7 +1280,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1412,7 +1412,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1562,7 +1562,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1681,7 +1681,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1813,5 +1813,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 43
+  "version": 45
 }
