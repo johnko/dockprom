@@ -83,7 +83,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -164,7 +164,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -245,7 +245,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -324,7 +324,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -430,7 +430,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -548,7 +548,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -653,7 +653,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -4651,5 +4651,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 17
+  "version": 19
 }
