@@ -126,7 +126,7 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -244,7 +244,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -328,7 +328,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -402,7 +402,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -486,7 +486,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -569,7 +569,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -645,7 +645,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -725,7 +725,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -805,7 +805,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -889,7 +889,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -970,7 +970,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -1889,7 +1889,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -2366,7 +2366,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -2552,11 +2552,11 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\"}[$__interval])",
+          "expr": "rate(node_network_receive_bytes_total{instance=\"$node\", job=\"$job\", device!=\"bcmsw\"}[$__interval])",
           "format": "time_series",
           "legendFormat": "{{device}} - Rx in",
           "range": true,
@@ -2565,7 +2565,7 @@
         },
         {
           "editorMode": "code",
-          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\"}[$__interval])",
+          "expr": "rate(node_network_transmit_bytes_total{instance=\"$node\", job=\"$job\", device!=\"bcmsw\"}[$__interval])",
           "format": "time_series",
           "legendFormat": "{{device}} - Tx out",
           "range": true,
@@ -2675,7 +2675,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -2798,7 +2798,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -2919,7 +2919,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -3028,7 +3028,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -3149,7 +3149,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -3251,7 +3251,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -3378,7 +3378,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "editorMode": "code",
@@ -16083,5 +16083,5 @@
   "timezone": "browser",
   "title": "Node Exporter Full",
   "uid": "rYdddlPWk",
-  "version": 17
+  "version": 21
 }
