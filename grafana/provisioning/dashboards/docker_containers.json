@@ -90,7 +90,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -169,7 +169,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -255,7 +255,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -336,7 +336,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -422,7 +422,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -503,7 +503,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -604,7 +604,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -721,7 +721,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -843,7 +843,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -977,7 +977,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1084,7 +1084,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1191,7 +1191,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1298,7 +1298,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1405,7 +1405,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "12.2.2",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1525,5 +1525,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 26
+  "version": 28
 }
