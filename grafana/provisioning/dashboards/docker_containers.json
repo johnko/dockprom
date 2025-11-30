@@ -671,7 +671,7 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
@@ -685,29 +685,13 @@
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 60
               }
             ]
           },
           "unit": "short"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "load 1m"
-            },
-            "properties": [
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "#BF1B00",
-                  "mode": "fixed"
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 4,
@@ -737,12 +721,37 @@
             "uid": "PBFA97CFB590B2093"
           },
           "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
+          "hide": true,
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "load 1m",
           "metric": "node_load1",
           "refId": "A",
           "step": 2
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "machine_cpu_cores{instance=\"$node2\"}",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "100 * $A / $B",
+          "hide": false,
+          "refId": "C",
+          "type": "math"
         }
       ],
       "title": "System Load",
@@ -1556,5 +1565,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 32
+  "version": 33
 }
