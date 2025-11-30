@@ -623,7 +623,7 @@
           },
           "expression": "100 * $A / $B ",
           "hide": false,
-          "refId": "C",
+          "refId": "load 1m in %",
           "type": "math"
         }
       ],
@@ -1847,5 +1847,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 49
+  "version": 50
 }

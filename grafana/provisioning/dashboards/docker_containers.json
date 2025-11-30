@@ -719,12 +719,14 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
           "hide": true,
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "load 1m",
+          "legendFormat": "__auto",
           "metric": "node_load1",
+          "range": true,
           "refId": "A",
           "step": 2
         },
@@ -749,7 +751,7 @@
           },
           "expression": "100 * $A / $B",
           "hide": false,
-          "refId": "C",
+          "refId": "load 1m in %",
           "type": "math"
         }
       ],
@@ -1564,5 +1566,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 35
+  "version": 36
 }
