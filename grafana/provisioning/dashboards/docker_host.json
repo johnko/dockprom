@@ -574,6 +574,7 @@
         "y": 3
       },
       "id": 9,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [],
@@ -716,6 +717,7 @@
         "y": 3
       },
       "id": 10,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [],
@@ -846,6 +848,7 @@
         "y": 3
       },
       "id": 11,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [],
@@ -949,6 +952,7 @@
         "y": 7
       },
       "id": 5,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1118,6 +1122,7 @@
         "y": 14
       },
       "id": 6,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1274,6 +1279,7 @@
         "y": 21
       },
       "id": 7,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1406,6 +1412,7 @@
         "y": 28
       },
       "id": 8,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1556,6 +1563,7 @@
         "y": 35
       },
       "id": 14,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1675,6 +1683,7 @@
         "y": 42
       },
       "id": 15,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1849,5 +1858,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 1
+  "version": 2
 }

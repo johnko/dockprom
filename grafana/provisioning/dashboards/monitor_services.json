@@ -411,6 +411,7 @@
         "y": 3
       },
       "id": 6,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -529,6 +530,7 @@
         "y": 9
       },
       "id": 7,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -638,6 +640,7 @@
         "y": 15
       },
       "id": 73,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -4674,5 +4677,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 19
+  "version": 1
 }

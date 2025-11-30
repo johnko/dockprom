@@ -597,6 +597,7 @@
         "y": 3
       },
       "id": 9,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [],
@@ -699,6 +700,7 @@
         "y": 3
       },
       "id": 10,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [],
@@ -844,6 +846,7 @@
         "y": 3
       },
       "id": 15,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -976,6 +979,7 @@
         "y": 7
       },
       "id": 8,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1083,6 +1087,7 @@
         "y": 14
       },
       "id": 11,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1190,6 +1195,7 @@
         "y": 21
       },
       "id": 12,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1297,6 +1303,7 @@
         "y": 28
       },
       "id": 13,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1404,6 +1411,7 @@
         "y": 35
       },
       "id": 14,
+      "interval": "2s",
       "options": {
         "legend": {
           "calcs": [
@@ -1566,5 +1574,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 37
+  "version": 1
 }
