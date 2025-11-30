@@ -5,6 +5,12 @@ ACTION="$1"
 
 set -u
 
+if type podman &>/dev/null; then
+  DOCKER_BIN=podman
+elif type docker &>/dev/null; then
+  DOCKER_BIN=docker
+fi
+
 if [[ "stop" == "$ACTION" ]] || [[ "down" == "$ACTION" ]]; then
   docker-compose down
 elif [[ "destroy" == "$ACTION" ]]; then
@@ -21,5 +27,8 @@ elif [[ "start" == "$ACTION" ]] || [[ "up" == "$ACTION" ]]; then
 elif [[ "logs" == "$ACTION" ]]; then
   docker-compose logs
 else
+  $DOCKER_BIN rm -f buildx_buildkit_default
+  $DOCKER_BIN restart prometheus
+  $DOCKER_BIN restart grafana
   docker-compose ps
 fi
