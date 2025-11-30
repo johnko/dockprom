@@ -97,10 +97,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(container_cpu_user_seconds_total{image!=\"\"}[1m])) / count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}) * 100",
+          "editorMode": "code",
+          "expr": "sum(rate(container_cpu_user_seconds_total{instance=\"$node2\",image!=\"\"}[1m])) / count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}) * 100",
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -176,7 +178,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "machine_cpu_cores",
+          "expr": "machine_cpu_cores{instance=\"$node2\"}",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -343,10 +345,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(container_memory_usage_bytes{image!=\"\"})",
+          "editorMode": "code",
+          "expr": "sum(container_memory_usage_bytes{instance=\"$node2\",image!=\"\"})",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 20
         }
@@ -510,9 +514,11 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(container_fs_usage_bytes)",
+          "editorMode": "code",
+          "expr": "sum(container_fs_usage_bytes{instance=\"$node2\"})",
           "interval": "30s",
           "intervalFactor": 2,
+          "range": true,
           "refId": "A",
           "step": 60
         }
@@ -611,10 +617,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "scalar(count(container_memory_usage_bytes{image!=\"\"}) > 0)",
+          "editorMode": "code",
+          "expr": "scalar(count(container_memory_usage_bytes{instance=\"$node2\",image!=\"\"}) > 0)",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "containers",
+          "range": true,
           "refId": "A",
           "step": 2
         }
@@ -1548,5 +1556,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 28
+  "version": 32
 }
