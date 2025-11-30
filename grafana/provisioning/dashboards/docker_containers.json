@@ -565,7 +565,7 @@
             "spanNulls": true,
             "stacking": {
               "group": "A",
-              "mode": "none"
+              "mode": "normal"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -618,13 +618,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "scalar(count(container_memory_usage_bytes{instance=\"$node2\",image!=\"\"}) > 0)",
-          "interval": "",
-          "intervalFactor": 2,
-          "legendFormat": "containers",
+          "expr": "group by (name) (container_memory_usage_bytes{instance=\"$node2\", image!=\"\"})",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "__auto",
           "range": true,
-          "refId": "A",
-          "step": 2
+          "refId": "A"
         }
       ],
       "title": "Running Containers",
@@ -1565,5 +1564,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 34
+  "version": 35
 }
