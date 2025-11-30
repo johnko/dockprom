@@ -15,7 +15,7 @@ groups:
         annotations:
           description: Docker host is under high load, the avg load 1m is at {{ $value}}. Reported by instance {{ $labels.instance }} of job {{ $labels.job }}.
           summary: Server under high load
-        expr: node_load1 > 1.5
+        expr: sum(rate(node_cpu_seconds_total{instance="$node",job="$job",mode!="idle"}[1m])) * 100 / scalar(count(node_cpu_seconds_total{mode="user",instance="$node",job="$job",mode!="idle"})) > 60
         for: 30s
         labels:
           severity: warning
