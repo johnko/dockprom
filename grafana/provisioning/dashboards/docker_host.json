@@ -611,11 +611,36 @@
             "uid": "PBFA97CFB590B2093"
           },
           "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
+          "hide": true,
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "load 1m",
           "refId": "A",
           "step": 10
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "machine_cpu_cores{instance=\"$node2\"}",
+          "hide": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "100 * $A / $B ",
+          "hide": false,
+          "refId": "C",
+          "type": "math"
         }
       ],
       "title": "Load Average 1m",
@@ -1838,5 +1863,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 47
+  "version": 48
 }
