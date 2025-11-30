@@ -29,86 +29,6 @@
       },
       "fieldConfig": {
         "defaults": {
-          "decimals": 1,
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "s"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 0,
-        "y": 0
-      },
-      "hideTimeOverride": true,
-      "id": 1,
-      "maxDataPoints": 100,
-      "options": {
-        "colorMode": "none",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "12.3.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
-          "interval": "30s",
-          "intervalFactor": 1,
-          "refId": "A",
-          "step": 30
-        }
-      ],
-      "timeFrom": "10s",
-      "title": "Uptime",
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
           "mappings": [
             {
               "options": {
@@ -142,7 +62,7 @@
       "gridPos": {
         "h": 3,
         "w": 4,
-        "x": 4,
+        "x": 0,
         "y": 0
       },
       "hideTimeOverride": true,
@@ -222,7 +142,7 @@
       "gridPos": {
         "h": 3,
         "w": 4,
-        "x": 8,
+        "x": 4,
         "y": 0
       },
       "hideTimeOverride": true,
@@ -263,6 +183,90 @@
       ],
       "timeFrom": "10s",
       "title": "CPU Cores",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 0
+      },
+      "hideTimeOverride": true,
+      "id": 16,
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "(sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}) * 100",
+          "interval": "10s",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "range": true,
+          "refId": "A",
+          "step": 20
+        }
+      ],
+      "timeFrom": "10s",
+      "title": "Memory Freeable",
       "type": "stat"
     },
     {
@@ -333,10 +337,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"}",
           "interval": "30s",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 60
         }
@@ -431,6 +437,7 @@
       },
       "fieldConfig": {
         "defaults": {
+          "decimals": 1,
           "mappings": [
             {
               "options": {
@@ -455,7 +462,7 @@
               }
             ]
           },
-          "unit": "bytes"
+          "unit": "s"
         },
         "overrides": []
       },
@@ -466,7 +473,7 @@
         "y": 0
       },
       "hideTimeOverride": true,
-      "id": 4,
+      "id": 1,
       "maxDataPoints": 100,
       "options": {
         "colorMode": "none",
@@ -492,16 +499,15 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(node_filesystem_free_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"})",
+          "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
           "interval": "30s",
           "intervalFactor": 1,
-          "legendFormat": "",
           "refId": "A",
           "step": 30
         }
       ],
       "timeFrom": "10s",
-      "title": "Free Storage",
+      "title": "Uptime",
       "type": "stat"
     },
     {
@@ -946,7 +952,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
         "y": 7
@@ -1116,10 +1122,10 @@
         ]
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 13
       },
       "id": 6,
       "interval": "2s",
@@ -1273,10 +1279,10 @@
         ]
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 19
       },
       "id": 7,
       "interval": "2s",
@@ -1406,10 +1412,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 25
       },
       "id": 8,
       "interval": "2s",
@@ -1557,10 +1563,10 @@
         ]
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 31
       },
       "id": 14,
       "interval": "2s",
@@ -1677,10 +1683,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 7,
+        "h": 6,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 37
       },
       "id": 15,
       "interval": "2s",
@@ -1858,5 +1864,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 2
+  "version": 3
 }
