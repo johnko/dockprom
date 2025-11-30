@@ -975,10 +975,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}[1m])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "editorMode": "code",
+          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode!=\"idle\"}[1m])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\",mode!=\"idle\"}))",
           "intervalFactor": 10,
           "legendFormat": "{{ mode }}",
           "metric": "node_cpu_seconds_total",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -1847,5 +1849,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 50
+  "version": 1
 }
