@@ -515,7 +515,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(container_fs_usage_bytes{instance=\"$node2\"})",
+          "expr": "max(container_fs_usage_bytes{instance=\"$node2\"})",
           "interval": "30s",
           "intervalFactor": 2,
           "range": true,
@@ -1566,5 +1566,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 36
+  "version": 37
 }
