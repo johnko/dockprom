@@ -252,9 +252,11 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "machine_cpu_cores",
+          "editorMode": "code",
+          "expr": "machine_cpu_cores{instance=\"$node2\"}",
           "intervalFactor": 2,
           "metric": "machine_cpu_cores",
+          "range": true,
           "refId": "A",
           "step": 2
         }
@@ -1836,5 +1838,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 45
+  "version": 47
 }
