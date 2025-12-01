@@ -668,7 +668,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "fixedColor": "semi-dark-purple",
+            "mode": "fixed"
           },
           "custom": {
             "axisBorderShow": false,
@@ -679,7 +680,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 100,
+            "fillOpacity": 30,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -712,10 +713,6 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1577,5 +1574,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 8
+  "version": 9
 }
