@@ -668,7 +668,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "#503bb8",
+            "fixedColor": "#806eb7",
             "mode": "fixed"
           },
           "custom": {
@@ -1574,5 +1574,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 12
+  "version": 13
 }
