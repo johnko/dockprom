@@ -11,7 +11,7 @@ global:
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
     monitor: docker-host-alpha
-  scrape_interval: 15s
+  scrape_interval: 1s
 rule_files:
   - alert.rules
 # A scrape configuration containing exactly one endpoint to scrape.
@@ -27,13 +27,13 @@ scrape_configs:
       - targets:
           - cadvisor:8080
   - job_name: prometheus
-    scrape_interval: 10s
+    scrape_interval: 1s
     static_configs:
       - targets:
           - localhost:9090
   - honor_labels: true
     job_name: pushgateway
-    scrape_interval: 10s
+    scrape_interval: 1s
     static_configs:
       - targets:
           - pushgateway:9091
