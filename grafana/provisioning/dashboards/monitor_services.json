@@ -451,10 +451,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (rate(container_cpu_user_seconds_total{container_label_org_label_schema_group=\"monitoring\"}[1m]) * 100  / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"})))",
           "format": "time_series",
           "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}        ",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -557,12 +559,14 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (container_memory_usage_bytes{container_label_org_label_schema_group=\"monitoring\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}        ",
           "metric": "container_memory_usage_bytes",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -4677,5 +4681,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 3
+  "version": 4
 }
