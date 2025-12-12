@@ -1006,10 +1006,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"})) * 100",
           "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}    ",
           "metric": "container_cpu_user_seconds_total",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -1114,10 +1116,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name)(container_memory_usage_bytes{image!=\"\",container_label_org_label_schema_group=\"\"})",
           "intervalFactor": 1,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}    ",
           "metric": "container_memory_usage",
+          "range": true,
           "refId": "A",
           "step": 1
         }
@@ -1222,10 +1226,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (container_memory_cache{image!=\"\",container_label_org_label_schema_group=\"\"})",
           "intervalFactor": 2,
-          "legendFormat": "{{name}}",
+          "legendFormat": "{{ name }}    ",
           "metric": "container_memory_cache",
+          "range": true,
           "refId": "A",
           "step": 2
         }
@@ -1330,10 +1336,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (rate(container_network_receive_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
           "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}    ",
           "metric": "container_network_receive_bytes_total",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -1438,10 +1446,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "expr": "sum by (name) (rate(container_network_transmit_bytes_total{image!=\"\",container_label_org_label_schema_group=\"\"}[1m]))",
           "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
+          "legendFormat": "{{ name }}    ",
           "metric": "container_network_transmit_bytes_total",
+          "range": true,
           "refId": "A",
           "step": 10
         }
@@ -1574,5 +1584,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 14
+  "version": 15
 }
