@@ -109,7 +109,7 @@ services:
     container_name: prometheus
     expose:
       - 9090
-    image: prom/prometheus:v3.7.3
+    image: prom/prometheus:v3.8.0
     labels:
       org.label-schema.group: monitoring
     networks:
