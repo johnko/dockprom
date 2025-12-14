@@ -1067,7 +1067,7 @@
             }
           },
           "mappings": [],
-          "max": 128000000,
+          "max": 8000000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1178,7 +1178,7 @@
             }
           },
           "mappings": [],
-          "max": 128000000,
+          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1289,7 +1289,7 @@
             }
           },
           "mappings": [],
-          "max": 128000000,
+          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1400,7 +1400,7 @@
             }
           },
           "mappings": [],
-          "max": 128000000,
+          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1591,5 +1591,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 17
+  "version": 18
 }
