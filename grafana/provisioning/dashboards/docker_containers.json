@@ -178,11 +178,13 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "machine_cpu_cores{instance=\"$node2\"}",
+          "editorMode": "code",
+          "expr": "sum(machine_cpu_cores{instance=\"$node2\"})",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
           "metric": "machine_cpu_cores",
+          "range": true,
           "refId": "A",
           "step": 20
         }
@@ -954,6 +956,7 @@
             }
           },
           "mappings": [],
+          "max": 10,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1064,6 +1067,7 @@
             }
           },
           "mappings": [],
+          "max": 128000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1174,6 +1178,7 @@
             }
           },
           "mappings": [],
+          "max": 128000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1284,6 +1289,7 @@
             }
           },
           "mappings": [],
+          "max": 128000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1394,6 +1400,7 @@
             }
           },
           "mappings": [],
+          "max": 128000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1584,5 +1591,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 15
+  "version": 16
 }
