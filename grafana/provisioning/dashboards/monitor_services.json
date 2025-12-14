@@ -387,6 +387,7 @@
             }
           },
           "mappings": [],
+          "max": 50,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -508,6 +509,7 @@
             }
           },
           "mappings": [],
+          "max": 16000000000,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -4681,5 +4683,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 4
+  "version": 5
 }
