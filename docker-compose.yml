@@ -118,6 +118,10 @@ services:
     volumes:
       - ./prometheus:/etc/prometheus
       - prometheus_data:/prometheus
+    deploy:
+      resources:
+        limits:
+          memory: 2G
   pushgateway:
     container_name: pushgateway
     expose:
