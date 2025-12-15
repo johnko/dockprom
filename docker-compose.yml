@@ -107,6 +107,10 @@ services:
       - --storage.tsdb.retention.time=200h
       - --web.enable-lifecycle
     container_name: prometheus
+    deploy:
+      resources:
+        limits:
+          memory: 2G
     expose:
       - 9090
     image: prom/prometheus:v3.8.0
@@ -118,10 +122,6 @@ services:
     volumes:
       - ./prometheus:/etc/prometheus
       - prometheus_data:/prometheus
-    deploy:
-      resources:
-        limits:
-          memory: 2G
   pushgateway:
     container_name: pushgateway
     expose:
