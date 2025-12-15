@@ -28,7 +28,7 @@ elif [[ "logs" == "$ACTION" ]]; then
   docker-compose logs
 else
   $DOCKER_BIN rm -f buildx_buildkit_default
-  $DOCKER_BIN restart prometheus
-  $DOCKER_BIN restart grafana
+  # $DOCKER_BIN restart prometheus
+  # $DOCKER_BIN restart grafana
   docker-compose ps
 fi
