@@ -179,7 +179,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(machine_cpu_cores{instance=\"$node2\"})",
+          "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -640,7 +640,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "machine_cpu_cores{instance=\"$node2\"}",
+          "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
           "hide": true,
           "instant": false,
           "legendFormat": "__auto",
@@ -1568,5 +1568,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 19
+  "version": 21
 }
