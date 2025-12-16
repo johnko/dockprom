@@ -624,39 +624,15 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "node_load1{instance=\"$node\",job=\"$job\"}",
-          "hide": true,
+          "expr": "sum(rate(node_load1{instance=\"$node\",job=\"$job\"}[1m])) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "hide": false,
           "interval": "",
           "intervalFactor": 2,
-          "legendFormat": "__auto",
+          "legendFormat": "load 1m",
           "metric": "node_load1",
           "range": true,
           "refId": "A",
           "step": 2
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
-          "hide": true,
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
-          },
-          "expression": "100 * $A / $B",
-          "hide": false,
-          "refId": "load 1m in %",
-          "type": "math"
         }
       ],
       "title": "System Load",
@@ -1568,5 +1544,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 21
+  "version": 22
 }
