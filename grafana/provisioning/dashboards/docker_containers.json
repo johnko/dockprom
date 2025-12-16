@@ -547,7 +547,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "axisSoftMax": 100,
+            "axisSoftMax": 1,
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
@@ -587,11 +587,11 @@
               },
               {
                 "color": "red",
-                "value": 60
+                "value": 0.6
               }
             ]
           },
-          "unit": "short"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -624,7 +624,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "node_load1{instance=\"$node\",job=\"$job\"} * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "expr": "node_load1{instance=\"$node\",job=\"$job\"} / scalar(count(node_cpu_online{instance=\"$node\",job=\"$job\"}))",
           "hide": false,
           "interval": "",
           "intervalFactor": 2,
@@ -1544,5 +1544,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 24
+  "version": 25
 }
