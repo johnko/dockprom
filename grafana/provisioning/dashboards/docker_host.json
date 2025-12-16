@@ -603,7 +603,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(rate(node_load1{instance=\"$node\",job=\"$job\"}[1m])) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "expr": "node_load1{instance=\"$node\",job=\"$job\"} * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
           "hide": false,
           "interval": "10s",
           "intervalFactor": 1,
@@ -1798,5 +1798,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 17
+  "version": 18
 }
