@@ -4606,29 +4606,6 @@
       },
       {
         "current": {
-          "text": "c22c6e4f1f93",
-          "value": "c22c6e4f1f93"
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${ds_prometheus}"
-        },
-        "definition": "label_values(node_uname_info{job=\"$job\"}, nodename)",
-        "includeAll": false,
-        "label": "Nodename",
-        "name": "nodename",
-        "options": [],
-        "query": {
-          "query": "label_values(node_uname_info{job=\"$job\"}, nodename)",
-          "refId": "Prometheus-nodename-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "",
-        "sort": 1,
-        "type": "query"
-      },
-      {
-        "current": {
           "text": "nodeexporter:9100",
           "value": "nodeexporter:9100"
         },
@@ -4636,13 +4613,13 @@
           "type": "prometheus",
           "uid": "${ds_prometheus}"
         },
-        "definition": "label_values(node_uname_info{job=\"$job\", nodename=\"$nodename\"}, instance)",
+        "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
         "includeAll": false,
         "label": "Instance",
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{job=\"$job\", nodename=\"$nodename\"}, instance)",
+          "query": "label_values(node_uname_info{job=\"$job\"}, instance)",
           "refId": "Prometheus-node-Variable-Query"
         },
         "refresh": 1,
