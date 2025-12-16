@@ -965,7 +965,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode!=\"idle\"}[1m])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\",mode!=\"idle\"}))",
+          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode!=\"idle\"}[$__interval])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\",mode!=\"idle\"}))",
           "intervalFactor": 10,
           "legendFormat": "{{ mode }}",
           "metric": "node_cpu_seconds_total",
@@ -1798,5 +1798,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 18
+  "version": 19
 }
