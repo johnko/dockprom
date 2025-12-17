@@ -907,26 +907,26 @@
               "mode": "normal"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
-          "max": 100,
+          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 0.8
               }
             ]
           },
-          "unit": "percent"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -965,7 +965,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode!=\"idle\"}[$__interval])) by (mode) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\",mode!=\"idle\"}))",
+          "expr": "sum(rate(node_cpu_seconds_total{instance=\"$node\",job=\"$job\",mode!=\"idle\"}[$__interval])) by (mode) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\",mode!=\"idle\"}))",
           "intervalFactor": 10,
           "legendFormat": "{{ mode }}",
           "metric": "node_cpu_seconds_total",
@@ -1798,5 +1798,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 20
+  "version": 21
 }
