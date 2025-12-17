@@ -440,27 +440,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "sum by (name) (rate(container_cpu_user_seconds_total{container_label_org_label_schema_group=\"monitoring\"}[1m])  / scalar(count(node_cpu{mode=\"user\",instance=\"$node\",job=\"$job\"})))",
+          "expr": "sum by (name) (rate(container_cpu_user_seconds_total{container_label_org_label_schema_group=\"monitoring\"}[$__interval]) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"})))",
           "format": "time_series",
-          "hide": true,
-          "intervalFactor": 10,
-          "legendFormat": "{{ name }}",
-          "range": true,
-          "refId": "A",
-          "step": 10
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum by (name) (rate(container_cpu_user_seconds_total{container_label_org_label_schema_group=\"monitoring\"}[1m])  / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"})))",
-          "format": "time_series",
+          "hide": false,
           "intervalFactor": 10,
           "legendFormat": "{{ name }}        ",
           "range": true,
-          "refId": "B"
+          "refId": "A"
         }
       ],
       "title": "Container CPU Usage",
@@ -4635,5 +4621,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 15
+  "version": 16
 }
