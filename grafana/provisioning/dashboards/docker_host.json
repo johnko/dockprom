@@ -552,15 +552,19 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "green",
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 85
+              },
+              {
                 "color": "red",
-                "value": 0.6
+                "value": 95
               }
             ]
           },
@@ -999,6 +1003,9 @@
             },
             "insertNulls": false,
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -1022,10 +1029,6 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1056,7 +1059,7 @@
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "#7EB26D",
+                  "fixedColor": "transparent",
                   "mode": "fixed"
                 }
               }
@@ -1139,17 +1142,6 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
-          "intervalFactor": 1,
-          "legendFormat": "Free",
-          "refId": "B",
-          "step": 1
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
           "expr": "node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}",
           "intervalFactor": 1,
           "legendFormat": "Buffers",
@@ -1165,6 +1157,18 @@
           "intervalFactor": 1,
           "legendFormat": "Cached",
           "refId": "D",
+          "step": 1
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "expr": "node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}",
+          "hide": false,
+          "intervalFactor": 1,
+          "legendFormat": "Free",
+          "refId": "E",
           "step": 1
         }
       ],
@@ -1792,5 +1796,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 23
+  "version": 24
 }
