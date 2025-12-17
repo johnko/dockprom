@@ -938,7 +938,7 @@
             }
           },
           "mappings": [],
-          "max": 0.51,
+          "max": 0.5,
           "min": 0,
           "thresholds": {
             "mode": "percentage",
@@ -1020,6 +1020,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 8000000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1049,7 +1050,6 @@
             }
           },
           "mappings": [],
-          "max": 8000000000,
           "min": 0,
           "thresholds": {
             "mode": "percentage",
@@ -1131,6 +1131,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 1000000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1160,7 +1161,6 @@
             }
           },
           "mappings": [],
-          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1242,6 +1242,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 1000000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1271,7 +1272,6 @@
             }
           },
           "mappings": [],
-          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "percentage",
@@ -1357,6 +1357,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 1000000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1386,7 +1387,6 @@
             }
           },
           "mappings": [],
-          "max": 1000000000,
           "min": 0,
           "thresholds": {
             "mode": "percentage",
@@ -1558,5 +1558,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 31
+  "version": 32
 }
