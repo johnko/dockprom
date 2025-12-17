@@ -203,7 +203,7 @@
               "type": "special"
             }
           ],
-          "max": 100,
+          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -214,11 +214,11 @@
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 0.8
               }
             ]
           },
-          "unit": "percent"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -256,7 +256,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "(sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}) * 100",
+          "expr": "(sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
@@ -1798,5 +1798,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 21
+  "version": 22
 }
