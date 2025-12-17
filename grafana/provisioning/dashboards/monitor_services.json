@@ -358,6 +358,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 0.5,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -387,7 +388,6 @@
             }
           },
           "mappings": [],
-          "max": 0.5,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -396,7 +396,7 @@
                 "value": 0
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 99
               }
             ]
@@ -482,6 +482,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 8000000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -511,7 +512,6 @@
             }
           },
           "mappings": [],
-          "max": 8000000000,
           "thresholds": {
             "mode": "percentage",
             "steps": [
@@ -520,7 +520,7 @@
                 "value": 0
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 99
               }
             ]
@@ -630,10 +630,6 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -4639,5 +4635,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 12
+  "version": 13
 }
