@@ -550,7 +550,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 100,
+            "fillOpacity": 70,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -661,7 +661,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 80,
+            "fillOpacity": 70,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -1543,5 +1543,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 34
+  "version": 35
 }

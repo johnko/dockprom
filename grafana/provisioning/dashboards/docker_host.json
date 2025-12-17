@@ -522,7 +522,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 100,
+            "fillOpacity": 70,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -631,7 +631,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 80,
+            "fillOpacity": 70,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -763,7 +763,7 @@
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
-            "fillOpacity": 80,
+            "fillOpacity": 70,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -1798,5 +1798,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 27
+  "version": 28
 }
