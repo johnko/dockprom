@@ -40,7 +40,7 @@
               "type": "special"
             }
           ],
-          "max": 100,
+          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -48,14 +48,10 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
-          "unit": "percent"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -92,10 +88,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(node_cpu_seconds_total{mode=\"idle\",instance=\"$node\",job=\"$job\"}[1m])) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "editorMode": "code",
+          "expr": "sum(rate(node_cpu_seconds_total{mode=\"idle\",instance=\"$node\",job=\"$job\"}[1m])) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
+          "range": true,
           "refId": "A",
           "step": 20
         }
@@ -211,10 +209,6 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 0.8
               }
             ]
           },
@@ -1798,5 +1792,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 22
+  "version": 23
 }
