@@ -928,26 +928,26 @@
               "mode": "normal"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
-          "max": 50,
+          "max": 0.51,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 0.5
               }
             ]
           },
-          "unit": "percent"
+          "unit": "percentunit"
         },
         "overrides": []
       },
@@ -986,7 +986,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "max(rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[$__interval])) by (name) * 100 / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
+          "expr": "max(rate(container_cpu_usage_seconds_total{image!=\"\",container_label_org_label_schema_group=\"\"}[$__interval])) by (name) / scalar(count(node_cpu_seconds_total{mode=\"user\",instance=\"$node\",job=\"$job\"}))",
           "intervalFactor": 10,
           "legendFormat": "{{ name }}    ",
           "metric": "container_cpu_user_seconds_total",
@@ -1544,5 +1544,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 25
+  "version": 26
 }
