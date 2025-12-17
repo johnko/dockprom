@@ -541,7 +541,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
           },
           "custom": {
             "axisBorderShow": true,
@@ -584,7 +584,7 @@
             "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
@@ -948,7 +948,7 @@
                 "value": 0
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 99
               }
             ]
@@ -1059,7 +1059,7 @@
                 "value": 0
               },
               {
-                "color": "red",
+                "color": "orange",
                 "value": 99
               }
             ]
@@ -1267,22 +1267,26 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
           "max": 1000000000,
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 85
+              },
+              {
                 "color": "red",
-                "value": 80
+                "value": 95
               }
             ]
           },
@@ -1378,22 +1382,26 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
           "max": 1000000000,
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 85
+              },
+              {
                 "color": "red",
-                "value": 80
+                "value": 95
               }
             ]
           },
@@ -1550,5 +1558,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 30
+  "version": 31
 }
