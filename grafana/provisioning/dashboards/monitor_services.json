@@ -387,9 +387,9 @@
             }
           },
           "mappings": [],
-          "max": 0.51,
+          "max": 0.5,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "transparent",
@@ -397,7 +397,7 @@
               },
               {
                 "color": "red",
-                "value": 0.5
+                "value": 99
               }
             ]
           },
@@ -507,21 +507,21 @@
               "mode": "normal"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
           "max": 8000000000,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 99
               }
             ]
           },
@@ -4639,5 +4639,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 11
+  "version": 12
 }
