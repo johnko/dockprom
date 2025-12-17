@@ -546,7 +546,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "axisSoftMax": 1,
+            "axisSoftMax": 0.85,
             "barAlignment": 0,
             "barWidthFactor": 1,
             "drawStyle": "bars",
@@ -578,7 +578,7 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "transparent",
@@ -586,11 +586,11 @@
               },
               {
                 "color": "orange",
-                "value": 85
+                "value": 0.85
               },
               {
                 "color": "red",
-                "value": 95
+                "value": 0.95
               }
             ]
           },
@@ -938,7 +938,7 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "transparent",
@@ -946,7 +946,7 @@
               },
               {
                 "color": "orange",
-                "value": 99
+                "value": 0.5
               }
             ]
           },
@@ -1049,7 +1049,7 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "transparent",
@@ -1057,7 +1057,7 @@
               },
               {
                 "color": "orange",
-                "value": 99
+                "value": 8000000000
               }
             ]
           },
@@ -1165,10 +1165,6 @@
               {
                 "color": "green",
                 "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           },
@@ -1239,7 +1235,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "axisSoftMax": 1000000000,
+            "axisSoftMax": 700000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1271,7 +1267,7 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "transparent",
@@ -1279,11 +1275,7 @@
               },
               {
                 "color": "orange",
-                "value": 85
-              },
-              {
-                "color": "red",
-                "value": 95
+                "value": 700000000
               }
             ]
           },
@@ -1354,7 +1346,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "axisSoftMax": 1000000000,
+            "axisSoftMax": 700000000,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1386,7 +1378,7 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "percentage",
+            "mode": "absolute",
             "steps": [
               {
                 "color": "transparent",
@@ -1394,11 +1386,7 @@
               },
               {
                 "color": "orange",
-                "value": 85
-              },
-              {
-                "color": "red",
-                "value": 95
+                "value": 700000000
               }
             ]
           },
@@ -1555,5 +1543,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 33
+  "version": 34
 }
