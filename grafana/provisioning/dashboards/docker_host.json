@@ -512,7 +512,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
+            "mode": "palette-classic"
           },
           "custom": {
             "axisBorderShow": true,
@@ -555,7 +555,7 @@
             "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
@@ -919,8 +919,12 @@
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 0.85
+              },
+              {
                 "color": "red",
-                "value": 0.8
+                "value": 0.95
               }
             ]
           },
@@ -1367,21 +1371,25 @@
               "mode": "normal"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 85
+              },
+              {
                 "color": "red",
-                "value": 80
+                "value": 95
               }
             ]
           },
@@ -1796,5 +1804,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 24
+  "version": 25
 }
