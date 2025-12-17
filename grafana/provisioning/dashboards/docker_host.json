@@ -40,7 +40,6 @@
               "type": "special"
             }
           ],
-          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -201,7 +200,6 @@
               "type": "special"
             }
           ],
-          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -880,6 +878,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMax": 1,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -909,7 +908,6 @@
             }
           },
           "mappings": [],
-          "max": 1,
           "min": 0,
           "thresholds": {
             "mode": "absolute",
@@ -1804,5 +1802,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 25
+  "version": 26
 }
