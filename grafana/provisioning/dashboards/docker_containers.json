@@ -581,15 +581,19 @@
           "mappings": [],
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "green",
                 "value": 0
               },
               {
+                "color": "orange",
+                "value": 85
+              },
+              {
                 "color": "red",
-                "value": 0.6
+                "value": 95
               }
             ]
           },
@@ -937,7 +941,7 @@
           "max": 0.51,
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
                 "color": "transparent",
@@ -945,7 +949,7 @@
               },
               {
                 "color": "red",
-                "value": 0.5
+                "value": 99
               }
             ]
           },
@@ -1041,22 +1045,22 @@
               "mode": "normal"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
           "mappings": [],
           "max": 8000000000,
           "min": 0,
           "thresholds": {
-            "mode": "absolute",
+            "mode": "percentage",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": 0
               },
               {
                 "color": "red",
-                "value": 80
+                "value": 99
               }
             ]
           },
@@ -1546,5 +1550,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 29
+  "version": 30
 }
