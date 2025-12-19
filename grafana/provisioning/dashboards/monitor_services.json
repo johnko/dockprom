@@ -90,10 +90,14 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "(time() - process_start_time_seconds{instance=\"localhost:9090\",job=\"prometheus\"})",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": false,
           "refId": "A",
           "step": 10
         }
@@ -171,11 +175,15 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "sum(container_memory_usage_bytes{container_label_org_label_schema_group=\"monitoring\"})",
           "format": "time_series",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 1,
           "legendFormat": "",
+          "range": false,
           "refId": "A",
           "step": 10
         }
@@ -252,9 +260,13 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "prometheus_tsdb_head_chunks",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 1,
+          "range": false,
           "refId": "A",
           "step": 10
         }
@@ -331,9 +343,13 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "prometheus_tsdb_head_series",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 1,
+          "range": false,
           "refId": "A",
           "step": 10
         }
@@ -4621,5 +4637,5 @@
   "timezone": "browser",
   "title": "Monitor Services",
   "uid": "6189e00d-bc1e-4aaa-af5d-ad48e778b1db",
-  "version": 16
+  "version": 17
 }
