@@ -89,11 +89,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "avg(rate(node_cpu_seconds_total{mode=\"idle\",instance=\"$node\",job=\"$job\"}[$__interval]))",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 20
         }
@@ -171,10 +173,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "instant": true,
           "intervalFactor": 2,
           "metric": "machine_cpu_cores",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 2
         }
@@ -250,11 +254,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "(sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 20
         }
@@ -333,11 +339,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"}",
+          "instant": true,
           "interval": "30s",
           "intervalFactor": 2,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 60
         }
@@ -414,9 +422,13 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "node_memory_SwapFree_bytes{instance=\"$node\",job=\"$job\"}",
+          "instant": true,
           "interval": "30s",
           "intervalFactor": 2,
+          "range": false,
           "refId": "A",
           "step": 60
         }
@@ -494,9 +506,13 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
+          "exemplar": false,
           "expr": "node_time_seconds{instance=\"$node\",job=\"$job\"} - node_boot_time_seconds{instance=\"$node\",job=\"$job\"}",
+          "instant": true,
           "interval": "30s",
           "intervalFactor": 1,
+          "range": false,
           "refId": "A",
           "step": 30
         }
@@ -1801,5 +1817,5 @@
   "timezone": "browser",
   "title": "Docker Host",
   "uid": "937be4a6-b957-44f3-9cf3-07cc7be8cd1b",
-  "version": 32
+  "version": 33
 }
