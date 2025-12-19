@@ -180,12 +180,14 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu))",
+          "instant": true,
           "interval": "",
           "intervalFactor": 2,
           "legendFormat": "",
           "metric": "machine_cpu_cores",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 20
         }
@@ -268,11 +270,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "(sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"}) - sum(node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Buffers_bytes{instance=\"$node\",job=\"$job\"}+node_memory_Cached_bytes{instance=\"$node\",job=\"$job\"}) ) / sum(node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 20
         }
@@ -351,11 +355,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "sum(container_memory_usage_bytes{instance=\"$node2\",image!=\"\"})",
+          "instant": true,
           "interval": "10s",
           "intervalFactor": 2,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 20
         }
@@ -522,10 +528,12 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "max(container_fs_usage_bytes{instance=\"$node2\"})",
+          "instant": true,
           "interval": "30s",
           "intervalFactor": 2,
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 60
         }
@@ -1551,5 +1559,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 40
+  "version": 41
 }
