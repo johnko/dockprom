@@ -445,11 +445,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
+          "exemplar": false,
           "expr": "(node_filesystem_size_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"} - node_filesystem_free_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"}) / node_filesystem_size_bytes{fstype=\"aufs\",instance=\"$node\",job=\"$job\"}",
+          "instant": true,
           "interval": "30s",
           "intervalFactor": 1,
           "legendFormat": "",
-          "range": true,
+          "range": false,
           "refId": "A",
           "step": 30
         }
@@ -1559,5 +1561,5 @@
   "timezone": "browser",
   "title": "Docker Containers",
   "uid": "121d0593-ffa8-484f-97c8-2b28d79dcfe1",
-  "version": 41
+  "version": 42
 }
