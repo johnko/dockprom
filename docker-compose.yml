@@ -111,7 +111,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1G
+          memory: 512M
     expose:
       - 9090
     image: prom/prometheus:v3.8.0
