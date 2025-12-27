@@ -65,6 +65,7 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - GF_SECURITY_ALLOW_EMBEDDING=true
       - GF_USERS_ALLOW_SIGN_UP=false
     expose:
       - 3000
