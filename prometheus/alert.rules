@@ -35,53 +35,53 @@ groups:
         for: 30s
         labels:
           severity: warning
-  - name: containers
-    rules:
-      - alert: dyndns_down
-        annotations:
-          description: dyndns container is down for more than 30 seconds.
-          summary: dyndns down
-        expr: absent(container_memory_usage_bytes{name="dyndns"})
-        for: 30s
-        labels:
-          severity: critical
-      - alert: dyndns_high_cpu
-        annotations:
-          description: dyndns CPU usage is {{ humanize $value}}%.
-          summary: dyndns high CPU usage
-        expr: sum(rate(container_cpu_usage_seconds_total{name="dyndns"}[1m])) / count(node_cpu_seconds_total{mode="system"}) * 100 > 10
-        for: 30s
-        labels:
-          severity: warning
-      - alert: dyndns_high_memory
-        annotations:
-          description: dyndns memory consumption is at {{ humanize $value}}.
-          summary: dyndns high memory usage
-        expr: sum(container_memory_usage_bytes{name="dyndns"}) > 1200000000
-        for: 30s
-        labels:
-          severity: warning
-      - alert: ssh_down
-        annotations:
-          description: ssh container is down for more than 30 seconds.
-          summary: ssh down
-        expr: absent(container_memory_usage_bytes{name="ssh"})
-        for: 30s
-        labels:
-          severity: critical
-      - alert: ssh_high_cpu
-        annotations:
-          description: ssh CPU usage is {{ humanize $value}}%.
-          summary: ssh high CPU usage
-        expr: sum(rate(container_cpu_usage_seconds_total{name="ssh"}[1m])) / count(node_cpu_seconds_total{mode="system"}) * 100 > 10
-        for: 30s
-        labels:
-          severity: warning
-      - alert: ssh_high_memory
-        annotations:
-          description: ssh memory consumption is at {{ humanize $value}}.
-          summary: ssh high memory usage
-        expr: sum(container_memory_usage_bytes{name="ssh"}) > 1200000000
-        for: 30s
-        labels:
-          severity: warning
+  # - name: containers
+  #   rules:
+  #     - alert: dyndns_down
+  #       annotations:
+  #         description: dyndns container is down for more than 30 seconds.
+  #         summary: dyndns down
+  #       expr: absent(container_memory_usage_bytes{name="dyndns"})
+  #       for: 30s
+  #       labels:
+  #         severity: critical
+  #     - alert: dyndns_high_cpu
+  #       annotations:
+  #         description: dyndns CPU usage is {{ humanize $value}}%.
+  #         summary: dyndns high CPU usage
+  #       expr: sum(rate(container_cpu_usage_seconds_total{name="dyndns"}[1m])) / count(node_cpu_seconds_total{mode="system"}) * 100 > 10
+  #       for: 30s
+  #       labels:
+  #         severity: warning
+  #     - alert: dyndns_high_memory
+  #       annotations:
+  #         description: dyndns memory consumption is at {{ humanize $value}}.
+  #         summary: dyndns high memory usage
+  #       expr: sum(container_memory_usage_bytes{name="dyndns"}) > 1200000000
+  #       for: 30s
+  #       labels:
+  #         severity: warning
+  #     - alert: ssh_down
+  #       annotations:
+  #         description: ssh container is down for more than 30 seconds.
+  #         summary: ssh down
+  #       expr: absent(container_memory_usage_bytes{name="ssh"})
+  #       for: 30s
+  #       labels:
+  #         severity: critical
+  #     - alert: ssh_high_cpu
+  #       annotations:
+  #         description: ssh CPU usage is {{ humanize $value}}%.
+  #         summary: ssh high CPU usage
+  #       expr: sum(rate(container_cpu_usage_seconds_total{name="ssh"}[1m])) / count(node_cpu_seconds_total{mode="system"}) * 100 > 10
+  #       for: 30s
+  #       labels:
+  #         severity: warning
+  #     - alert: ssh_high_memory
+  #       annotations:
+  #         description: ssh memory consumption is at {{ humanize $value}}.
+  #         summary: ssh high memory usage
+  #       expr: sum(container_memory_usage_bytes{name="ssh"}) > 1200000000
+  #       for: 30s
+  #       labels:
+  #         severity: warning
