@@ -69,7 +69,7 @@ services:
       - GF_USERS_ALLOW_SIGN_UP=false
     expose:
       - 3000
-    image: grafana/grafana:12.4.1
+    image: grafana/grafana:12.4.2
     labels:
       org.label-schema.group: monitoring
     networks:
