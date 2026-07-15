@@ -9,7 +9,7 @@ services:
     container_name: alertmanager
     expose:
       - 9093
-    image: prom/alertmanager:v0.33.0
+    image: prom/alertmanager:v0.33.1
     labels:
       org.label-schema.group: monitoring
     networks:
