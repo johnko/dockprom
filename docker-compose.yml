@@ -115,7 +115,7 @@ services:
           memory: 512M
     expose:
       - 9090
-    image: prom/prometheus:v3.13.1
+    image: prom/prometheus:v3.13.2
     labels:
       org.label-schema.group: monitoring
     networks:
