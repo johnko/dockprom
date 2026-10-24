@@ -43,7 +43,7 @@ services:
       - /dev/kmsg:/dev/kmsg
     expose:
       - 8080
-    image: gcr.io/cadvisor/cadvisor:v0.52.1
+    image: gcr.io/cadvisor/cadvisor:v0.55.1
     labels:
       org.label-schema.group: monitoring
     networks:
